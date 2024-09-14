@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("122193587-close-up-and-selective-focus-shot-calculator-on-blue-background-copy-space-for-text.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .calcu{
+            text-align: center;
+            border: .1px solid #79CFDC;
+            width: 440px;
+            font-size: 100px;
+            border-radius: 30px;
+            height: 640px;
+            margin-left: 800px;
+            box-shadow: 10px 10px 1000px #79CFDC; 
+            background-color: #79CFDC;
+        }
+
+        button{
+            padding: 20px;
+            width: 70px;
+            border-radius: 20px;
+            font-size: 35px;
+            background-color: black;
+            color: white;
+        }
+        input{
+            padding: 45px;
+            width: 250px;
+            border-radius: 15px;
+            font-size: 40px;
+            box-shadow: 2px 2px 2px white;
+            border: #79CFDC;
+        }
+        #res{
+            position: absolute;
+            top: 5px;
+            left: 1100px;
+            font-size: 35px;
+            /* color: orangered; */
+        }
+    </style>
+</head>
+<body>
+    <div class="calcu">
+        <input type="number" id=cal onclick="show()">
+        <br>
+        <button onclick="num1()">1</button>
+        <button onclick="num2()">2</button>
+        <button onclick="num3()">3</button>
+        <button onclick="div()" style="color: orangered;">/</button>
+        <br>
+        <button onclick="num4()">4</button>
+        <button onclick="num5()">5</button>
+        <button onclick="num6()">6</button>
+        <button onclick="sub()" style="color: orangered;">-</button>
+        <br>
+        <button onclick="num7()">7</button>
+        <button onclick="num8()">8</button>
+        <button onclick="num9()">9</button>
+        <button onclick="multi()" style="color: orangered;">*</button>
+        <br>
+        <button onclick="num0()">0</button>
+        <button>.</button>
+        <button onclick="edd()" style="color: orangered;">+</button>
+        <button onclick="equal()" style="color: orangered;">=</button>
+        <!-- <button onclick="cle()">Clear</button> -->
+    </div>
+    <h2 id="res"></h2>
+
+
+
+
+
+    <script>
+        var ext=""
+        var n1,n2,eq,op,shows;
+        function num1()
+        {
+            document.getElementById("cal").value=ext+="1";
+        }
+        function num2()
+        {
+            document.getElementById("cal").value=ext+="2"
+        }
+
+        function num3(){
+         document.getElementById("cal").value=ext+="3"
+        }
+        function num4(){
+            document.getElementById("cal").value=ext+="4"
+        }
+        function num5(){
+            document.getElementById("cal").value=ext+="5"
+        }
+        function num6(){
+            document.getElementById("cal").value=ext+="6"
+        }
+        function num7(){
+            document.getElementById("cal").value=ext+="7"
+        }
+        function num8(){
+            document.getElementById("cal").value=ext+="8"
+        }
+        function num9(){
+            document.getElementById("cal").value=ext+="9"
+        }
+        function num0(){
+            document.getElementById("cal").value=ext+="0"
+        }
+
+
+
+
+
+
+
+
+        function edd()
+        {
+            n1=document.getElementById("cal").value;
+            document.getElementById("cal").value="";
+            ext="";
+            op="+";
+        }
+        function sub()
+        {
+            n1=document.getElementById("cal").value;
+            document.getElementById("cal").value="";
+            ext="";
+            op="-";
+        }
+        function div(){
+            n1=document.getElementById("cal").value;
+            document.getElementById("cal").value="";
+            ext="";
+            op="/";
+        }
+        function multi()
+        {
+            n1=document.getElementById("cal").value;
+            document.getElementById("cal").value="";
+            ext="";
+            op="*";
+        }
+        function equal()
+        {
+          if(op=="+") {
+            n2=document.getElementById("cal").value;
+            eq=parseInt(n1)+parseInt(n2);
+            document.getElementById("cal").value=eq;
+            ext="";
+          }
+          else if(op=="-") {
+            n2=document.getElementById("cal").value;
+            eq=parseInt(n1)-parseInt(n2);
+            document.getElementById("cal").value=eq;
+            ext="";
+          }
+          else if(op=="*") {
+            n2=document.getElementById("cal").value;
+            eq=parseInt(n1)*parseInt(n2);
+            document.getElementById("cal").value=eq;
+            ext="";
+          }
+          else if(op=="/")
+          {
+            n2=document.getElementById("cal").value;
+            eq=parseInt(n1)/parseInt(n2);
+            document.getElementById("cal").value=eq;
+            ext="";
+          }
+          document.getElementById("res").innerHTML=(n1+" "+op+" "+n2) 
+        }
+    </script>
+</body>
+</html>
